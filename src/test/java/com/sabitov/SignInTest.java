@@ -1,23 +1,21 @@
 package com.sabitov;
 
-import java.time.Duration;
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-import org.junit.*;
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.Select;
-import org.apache.commons.io.FileUtils;
-import java.io.File;
+
+import java.time.Duration;
+
+import static org.junit.Assert.fail;
 
 public class SignInTest {
     private WebDriver driver;
     private String baseUrl;
     private boolean acceptNextAlert = true;
-    private StringBuffer verificationErrors = new StringBuffer();
+    private final StringBuffer verificationErrors = new StringBuffer();
     JavascriptExecutor js;
     @Before
     public void setUp() throws Exception {
