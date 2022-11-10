@@ -17,18 +17,19 @@ import java.time.Duration;
 import static org.junit.Assert.fail;
 
 public class TestBase {
+
     protected ApplicationManager applicationManager;
 
     JavascriptExecutor js;
 
     @Before
     public void setUp() throws Exception {
-        applicationManager = new ApplicationManager();
+        applicationManager = ApplicationManager.getInstance();
     }
 
     @After
     public void tearDown() throws Exception {
-        applicationManager.stop();
+//        applicationManager.stop();
     }
 
 }

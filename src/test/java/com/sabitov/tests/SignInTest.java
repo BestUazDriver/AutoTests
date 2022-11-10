@@ -7,9 +7,9 @@ public class SignInTest extends TestBase {
 
 
 
-    @Test
-    public void signInTestCase() throws Exception {
-        applicationManager.getNavigationHelper().getHomePage();
-        applicationManager.getLogInHelper().signIn();
-    }
+//    @Test
+//    public void signInTestCase() throws Exception {
+//        applicationManager.getNavigationHelper().getHomePage();
+//        applicationManager.getLogInHelper().signIn();
+//    }
 }
