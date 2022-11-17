@@ -31,7 +31,7 @@ public class ApplicationManager {
         chromeOptions.addArguments("--start-maximized");
         driver = new ChromeDriver(chromeOptions);
         baseUrl = "https://www.google.com/";
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(180));
 
         contactHelper = new ContactHelper(this);
         groupHelper = new GroupHelper(this);

@@ -10,12 +10,16 @@ public class LogInHelper extends HelperBase {
         super(applicationManager);
     }
 
-    public void signIn(){
+    public void signIn() {
         driver.findElement(By.linkText("Sign in")).click();
         driver.findElement(By.id("login_field")).clear();
         driver.findElement(By.id("login_field")).sendKeys(SignInData.username);
         driver.findElement(By.id("password")).clear();
         driver.findElement(By.id("password")).sendKeys(SignInData.password);
         driver.findElement(By.name("commit")).click();
+    }
+
+    public boolean isSignedIn() {
+        return driver.findElement(By.xpath("/html/body/div[1]/header/div[7]/details")) != null;
     }
 }

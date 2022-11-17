@@ -1,6 +1,7 @@
 package com.sabitov.tests;
 
 import com.sabitov.base.TestBase;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class SignInTest extends TestBase {
@@ -8,8 +9,12 @@ public class SignInTest extends TestBase {
 
 
 //    @Test
-//    public void signInTestCase() throws Exception {
-//        applicationManager.getNavigationHelper().getHomePage();
-//        applicationManager.getLogInHelper().signIn();
-//    }
+    public void signInTestCase() throws Exception {
+        applicationManager.getNavigationHelper().getHomePage();
+        applicationManager.getLogInHelper().signIn();
+        if(!applicationManager.getLogInHelper().isSignedIn()){
+            Assert.fail();
+        }
+
+    }
 }
