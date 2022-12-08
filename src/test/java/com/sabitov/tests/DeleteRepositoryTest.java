@@ -1,6 +1,6 @@
 package com.sabitov.tests;
 
-import com.sabitov.base.TestBase;
+import com.sabitov.base.AuthBase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.List;
 
 @RunWith(value = Parameterized.class)
-public class DeleteRepositoryTest extends TestBase {
+public class DeleteRepositoryTest extends AuthBase {
 
     private String name;
 
@@ -48,7 +48,6 @@ public class DeleteRepositoryTest extends TestBase {
 
     @Test
     public void deleteRepositoryTestCase() throws Exception {
-        applicationManager.getNavigationHelper().getHomePage();
         applicationManager.getGroupHelper().deleteRepository(name);
     }
 }

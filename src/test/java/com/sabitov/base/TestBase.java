@@ -14,6 +14,7 @@ public class TestBase {
     @Before
     public void setUp() throws Exception {
         applicationManager = ApplicationManager.getInstance();
+        applicationManager.getNavigationHelper().getHomePage();
     }
 
     @After

@@ -4,7 +4,6 @@ import com.sabitov.helpers.ContactHelper;
 import com.sabitov.helpers.GroupHelper;
 import com.sabitov.helpers.LogInHelper;
 import com.sabitov.helpers.NavigationHelper;
-import org.junit.AfterClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -31,7 +30,7 @@ public class ApplicationManager {
         chromeOptions.addArguments("--start-maximized");
         driver = new ChromeDriver(chromeOptions);
         baseUrl = "https://www.google.com/";
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(180));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
         contactHelper = new ContactHelper(this);
         groupHelper = new GroupHelper(this);
@@ -43,7 +42,6 @@ public class ApplicationManager {
         if (applicationManagerThreadLocal.get() == null){
             ApplicationManager applicationManager = new ApplicationManager();
             applicationManager.getNavigationHelper().getHomePage();
-            applicationManager.getLogInHelper().signIn();
             applicationManagerThreadLocal.set(applicationManager);
         }
         return applicationManagerThreadLocal.get();

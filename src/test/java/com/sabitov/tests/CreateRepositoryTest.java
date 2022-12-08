@@ -1,6 +1,6 @@
 package com.sabitov.tests;
 
-import com.sabitov.base.TestBase;
+import com.sabitov.base.AuthBase;
 import com.sabitov.data.GroupData;
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.List;
 
 @RunWith(value = Parameterized.class)
-public class CreateRepositoryTest extends TestBase {
+public class CreateRepositoryTest extends AuthBase {
 
     private String names;
 
@@ -49,7 +49,6 @@ public class CreateRepositoryTest extends TestBase {
 
     @Test
     public void createRepositoryTestCase() throws Exception {
-            applicationManager.getNavigationHelper().getHomePage();
             applicationManager.getGroupHelper().createRepository(names);
             GroupData groupData = applicationManager.getGroupHelper().GetCreatedGroupData(names);
             if (!groupData.getName().equals(names)) {
